@@ -1,0 +1,146 @@
+/* Whole body of the set up */
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+/* mainbox container */
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Hides each step when the next button is click */
+.step {
+  position: absolute;
+  width: 100%;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform: translateX(100%);
+  opacity: 0;
+}
+/* Activate the next UI or selection and will disappear as the next button is click */
+.step.active {
+  transform: translateX(0%);
+  opacity: 1;
+  z-index: 2;
+}
+
+.step.left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+input[type="text"], select {
+  padding: 10px;
+  margin-top: 10px;
+  width: 95%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+/* main buttons */
+button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #45a049;
+}
+/* for yes/no option */
+.chat-button {
+  background: #eee;
+  color: #333;
+  border: 1px solid #ccc;
+  margin: 10px 5px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.chat-button:hover {
+  background: #ddd;
+}
+/*  preview the recent uploaded img */
+img#previewImg {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: none;
+}
+
+.chat-window {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.chat-message {
+  margin: 10px 0;
+  padding: 12px 18px;
+  border-radius: 20px;
+  max-width: 80%;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.chat-message.user {
+  background-color: #dcf8c6;
+  text-align: right;
+  margin-left: auto;
+}
+/* crush reply aligned to the message  */
+.chat-message.bot {
+  background-color: #f1f0f0;
+  text-align: left;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* chathead */
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 15px;
+  }
+
+  button, .chat-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

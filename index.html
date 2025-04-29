@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <!-- Step 1: User name -->
+  <div class="step active" id="step1">
+    <h2>What's your name?</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <h2>What's your crush's name?</h2>
+    <input type="text" id="crushInput" placeholder="Enter your crush's name" />
+    <div class="buttons">
+      <button onclick="nextStep()">Next</button>
+    </div>
+  </div>
+<!-- In this div container where the UI of the site  displayed, Only your name will be displayed and not your crush name because of chatbot and I don't know how to fix that stupid thing. Why?? -->
+
+
+  <!-- Step 2: Gender -->
+  <div class="step" id="step2">
+    <h2>Select his/her gender</h2>
+    <select id="genderSelect">
+      <option value="">--Choose--</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <div class="buttons">
+      <button onclick="nextStep()">Next</button>
+    </div>
+  </div>
+<!-- ask the user what his crush gender but it's not useful because of I put an automated chatbot so this selection is useless haha -->
+
+
+  <!-- Step 3: Education -->
+  <div class="step" id="step3">
+    <h2>Education Status</h2>
+    <select id="educationSelect">
+      <option value="">--Choose--</option>
+      <option value="High School">High School</option>
+      <option value="College">College</option>
+    </select>
+    <div class="buttons">
+      <button onclick="nextStep()">Next</button>
+    </div>
+  </div>
+<!-- also useless but study paki study parin to  -->
+
+
+  <!-- Step 4: Photo -->
+  <div class="step" id="step4">
+    <h2>Upload your photo</h2>
+    <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)" />
+    <img id="previewImg" alt="Preview" />
+    <div class="buttons">
+      <button onclick="nextStep()">Next</button>
+    </div>
+  </div>
+<!-- this where you will upload your crush photo and it will be display as chathead -->
+
+
+  <!-- Step 5: Love Question -->
+  <div class="step" id="step5">
+    <h2>Do you love me?</h2>
+    <div class="buttons">
+      <div class="chat-button" onclick="answerLove(true)">Yes</div>
+      <div class="chat-button" onclick="answerLove(false)">No</div>
+    </div>
+  </div>
+
+
+
+  <!-- Chat window -->
+  <div class="chat-window" id="chatWindow" style="display: none;">
+    <div class="chat-message user" id="userMessage"></div>
+    <div class="chat-message bot">
+      <img id="crushImage" class="chat-avatar" src="" alt="crush" />
+      <span id="botMessage" class="typing"></span>
+    </div>
+  </div>
+</div>
+<!-- this is for the chathead -->
+
+
+<script src="script.js"></script>
+</body>
+</html>
